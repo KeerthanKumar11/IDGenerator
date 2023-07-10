@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student ID Card Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    #generate-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    #id-card {
+      display: none;
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    #id-card h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" required>
+    </div>
+    <div class="form-group">
+      <label for="college">College Name:</label>
+      <input type="text" id="college" required>
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input type="text" id="country" required>
+    </div>
+    <div class="form-group">
+      <label for="unique-code">Unique Code Number:</label>
+      <input type="text" id="unique-code" required>
+    </div>
+    <button id="generate-button" onclick="generateIDCard()">Generate ID Card</button>
+  </div>
+
+  <div id="id-card">
+    <h2>Student ID Card</h2>
+    <p><strong>Name:</strong> <span id="card-name"></span></p>
+    <p><strong>College Name:</strong> <span id="card-college"></span></p>
+    <p><strong>Location:</strong> <span id="card-location"></span></p>
+  </div>
+
+  <script>
+    function generateIDCard() {
+      // Get form field values
+      var name = document.getElementById('name').value;
+      var college = document.getElementById('college').value;
+      var country = document.getElementById('country').value;
+
+      // Display ID Card
+      document.getElementById('card-name').innerText = name;
+      document.getElementById('card-college').innerText = college;
+      document.getElementById('card-location').innerText = country;
+
+      document.getElementById('id-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
