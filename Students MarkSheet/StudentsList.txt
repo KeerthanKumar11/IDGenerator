@@ -1,3 +1,0 @@
-name,marks
-John Mike,85
-Jane Smith,72
